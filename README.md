@@ -28,17 +28,19 @@ How to run it
 ```
 git clone git@github.com:GBouffard/chitter-challenge.git
 cd chitter-challenge
+bundle
+psql
 CREATE DATABASE chitter_development;
+CREATE DATABASE chitter_test;
+rackup
 ```
-Still to come
-shotgun -p 3000 chitter.rb
-open localhost:3000 in your browser
+You can now open localhost:9292 in your browser, sign up, in and out and post peeps.
 
 How to run tests
 ----
 ```
 cd chitter-challenge
-rspec
+rake
 ```
 
 and this is what you should see
