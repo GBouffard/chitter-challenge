@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guillaume 's Chitter</title>
+  </head>
+
+  <body>
+  This is Guillaume's Chitter<br><br>
+    <div>
+      <ul>
+        <% @peeps.each do |peep| %>
+        <li><%= peep.message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </body>
+</html>
