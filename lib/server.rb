@@ -25,5 +25,16 @@ class Chitter < Sinatra::Base
     redirect to('/')
   end
 
+  get '/peeps/:id' do
+    @peep = Peep.get(params[:id])
+    erb :'peep/show'
+  end
+
+  put '/peeps/:id' do
+    @peep = Peep.get(params[:id])
+    @peep.update(message: params[:message])
+    redirect to('/')
+  end
+
   run! if app_file == Chitter
 end

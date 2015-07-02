@@ -12,7 +12,10 @@
     <div>
       <ul>
         <% @peeps.each do |peep| %>
-          <li><%= peep.message %>        
+          <li><%= peep.message %><br>
+
+            <a href="/peeps/<%= peep.id %>"><button>Update Peep</button></a>
+
             <form action="/peeps/<%= peep.id %>" method="post">
               <input type="hidden" name="_method" value="delete">
               <input type="submit" value="Delete Peep">
