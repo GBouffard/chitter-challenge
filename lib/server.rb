@@ -3,6 +3,7 @@ require_relative 'data_mapper_setup'
 
 class Chitter < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
+  use Rack::MethodOverride
 
   get '/' do
     @peeps = Peep.all
@@ -15,6 +16,12 @@ class Chitter < Sinatra::Base
 
   post '/peeps' do
     Peep.create(message: params[:message])
+    redirect to('/')
+  end
+
+  delete '/peeps/:id' do
+    @peep = Peep.get(params[:id])
+    @peep.destroy
     redirect to('/')
   end
 
