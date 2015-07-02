@@ -13,5 +13,10 @@ class Chitter < Sinatra::Base
     erb :'peep/new'
   end
 
+  post '/peeps' do
+    Peep.create(message: params[:message])
+    redirect to('/')
+  end
+
   run! if app_file == Chitter
 end
