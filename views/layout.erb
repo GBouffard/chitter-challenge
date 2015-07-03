@@ -2,8 +2,13 @@
   <% if current_user %>
     Welcome, <%= current_user.email %>
   <% end %>
+  <% if flash[:errors] && !flash[:errors].empty? %>
+    Sorry, there were the following problems with your registration:
+    <ul id='errors'>
+      <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+   <% end %>
   <%= yield %>
-  <% if flash[:notice] %>
-    <div id='notice'><%= flash[:notice] %></div>
-  <% end %>
 </body>
