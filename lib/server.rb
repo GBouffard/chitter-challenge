@@ -50,6 +50,12 @@ class Chitter < Sinatra::Base
     end
   end
 
+  delete '/sessions' do
+    flash[:notice] = 'Good bye!'
+    session[:user_id] = nil
+    redirect to '/'
+  end
+
   get '/peeps/new' do
     erb :'peep/new'
   end

@@ -1,3 +1,6 @@
+require_relative 'helpers/user_signs'
+include UserSigns
+
 feature 'User signs up' do
   scenario 'when being a new user visiting the site' do
     expect { sign_up }.to change(User, :count).by(1)
@@ -14,17 +17,6 @@ feature 'User signs up' do
     expect { sign_up }.to change(User, :count).by(1)
     expect { sign_up }.to change(User, :count).by(0)
     expect(page).to have_content('This email is already taken')
-  end
-
-  def sign_up(email = 'Guillaume@bouffard.com',
-              password = 'whatever',
-              password_confirmation = 'whatever')
-    visit '/users/new'
-    expect(page.status_code).to eq(200)
-    fill_in :email, with: email
-    fill_in :password, with: password
-    fill_in :password_confirmation, with: password_confirmation
-    click_button 'Sign up'
   end
 end
 
@@ -48,11 +40,19 @@ feature 'User signs in' do
     sign_in('Guillaume@bouffard.com', 'wrongpassword')
     expect(page).not_to have_content('Welcome, Guillaume@bouffard.com')
   end
+end
 
-  def sign_in(email, password)
-    visit '/sessions/new'
-    fill_in :email, with: email
-    fill_in :password, with: password
-    click_button 'Sign in'
+feature 'User signs out' do
+  before(:each) do
+    User.create(email: 'Guillaume@bouffard.com',
+                password: 'whatever',
+                password_confirmation: 'whatever')
+  end
+
+  scenario 'can sign out while being signed in' do
+    sign_in('Guillaume@bouffard.com', 'whatever')
+    click_button 'Sign out'
+    expect(page).to have_content('Good bye!')
+    expect(page).not_to have_content('Welcome, Guillaume@bouffard.com')
   end
 end
