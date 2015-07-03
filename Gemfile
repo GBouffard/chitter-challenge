@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.1'
 
+gem 'bcrypt-ruby'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'pg'

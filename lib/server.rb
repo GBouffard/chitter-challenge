@@ -1,13 +1,27 @@
 require 'sinatra/base'
 require_relative 'data_mapper_setup'
+require_relative 'helpers/session_helper'
 
 class Chitter < Sinatra::Base
+  enable :sessions
   set :views, proc { File.join(root, '..', 'views') }
   use Rack::MethodOverride
+  helpers SessionHelper
 
   get '/' do
     @peeps = Peep.all
     erb :index
+  end
+
+  get '/users/new' do
+    erb :'users/new'
+  end
+
+  post '/users' do
+    user = User.create(email: params[:email],
+                       password: params[:password])
+    session[:user_id] = user.id
+    redirect '/'
   end
 
   get '/peeps/new' do
