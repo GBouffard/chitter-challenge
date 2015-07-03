@@ -1,2 +1,2 @@
-require './lib/server.rb'
+require './app/server.rb'
 run Chitter

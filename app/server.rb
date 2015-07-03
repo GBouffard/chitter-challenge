@@ -5,7 +5,6 @@ require_relative 'helpers/session_helper'
 
 class Chitter < Sinatra::Base
   enable :sessions
-  set :views, proc { File.join(root, '..', 'views') }
   use Rack::Flash
   use Rack::MethodOverride
   helpers SessionHelper
