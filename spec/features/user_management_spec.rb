@@ -8,13 +8,17 @@ feature 'A new user visiting Chitter' do
   end
 
   scenario 'cannot sign-up with an invalid format email' do
-    expect { sign_up('not_an_email', 'pass', 'pass') }.to change(User, :count).by(0)
+    expect { sign_up('not_an_email', 'password', 'password') }.to change(User, :count).by(0)
   end
 
   scenario 'cannot sign-up with if a password and its confirmation don\'t match' do
-    expect { sign_up('mr_wrong@wrong.com', 'pass', 'wrong') }.to change(User, :count).by(0)
+    expect { sign_up('mr_wrong@wrong.com', 'password', 'wrongpass') }.to change(User, :count).by(0)
     expect(current_path).to eq('/users')
     expect(page).to have_content('Sorry! Your passwords do not match')
+  end
+
+  scenario 'cannot sign-up with a password that is less than 8 characters long' do
+    expect { sign_up('mr_right@right.com', 'short', 'short') }.to change(User, :count).by(0)
   end
 
   scenario 'cannot sign-up with an email that is already registered' do
