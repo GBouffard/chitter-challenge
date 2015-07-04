@@ -29,6 +29,14 @@ feature 'Peep management' do
     expect(page).to have_content('Hello Chitter')
   end
 
+  scenario 'an empty peep cannot be posted' do
+    visit '/'
+    click_link('New Peep')
+    click_button 'Post Peep'
+    expect(current_path).to eq('/peeps/new')
+    expect(page).to have_content('You cannot post an empty peep!')
+  end
+
   scenario 'an existing peep can be deleted' do
     click_button('Delete Peep')
     expect(page).not_to have_content('Hello Chitter')

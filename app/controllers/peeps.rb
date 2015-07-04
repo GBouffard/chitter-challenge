@@ -3,9 +3,14 @@ get '/peeps/new' do
 end
 
 post '/peeps' do
-  Peep.create(message: params[:message], user_id: session[:user_id])
-
-  redirect to('/')
+  peep_message = params[:message]
+  if peep_message.empty?
+    flash[:notice] = 'You cannot post an empty peep!'
+    redirect '/peeps/new'
+  else
+    @peep = Peep.create(message: params[:message], user_id: session[:user_id])
+    redirect '/'
+  end
 end
 
 delete '/peeps/:id' do
