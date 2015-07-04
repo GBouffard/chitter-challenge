@@ -8,7 +8,7 @@ post '/peeps' do
     flash[:notice] = 'You cannot post an empty peep!'
     redirect '/peeps/new'
   else
-    @peep = Peep.create(message: params[:message], 
+    @peep = Peep.create(message: params[:message],
                         user_id: session[:user_id],
                         date_time: DateTime.now)
     redirect '/'
@@ -18,6 +18,7 @@ end
 delete '/peeps/:id' do
   @peep = Peep.get(params[:id])
   @peep.destroy
+  flash[:notice] = 'Peep successfully deleted!'
   redirect to('/')
 end
 
@@ -33,7 +34,8 @@ put '/peeps/:id' do
     flash[:notice] = 'You cannot update to an empty peep!'
     erb :'peep/show'
   else
-    @peep.update(message: params[:message], )
+    @peep.update(message: params[:message])
+    flash[:notice] = 'Peep successfully updated!'
     redirect to('/')
   end
 end

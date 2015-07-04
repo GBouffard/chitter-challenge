@@ -18,8 +18,8 @@ module PeepsHelper
                 password: 'password',
                 password_confirmation: 'password')
     guillaume = User.first
-    Peep.create(message: 'peep peep peep', user_id: guillaume.id)
-    Peep.create(message: 'moo!', user_id: guillaume.id)
+    Peep.create(message: 'peep peep peep', user_id: guillaume.id, date_time: DateTime.now)
+    Peep.create(message: 'moo!', user_id: guillaume.id, date_time: DateTime.now)
     visit '/'
   end
 end
