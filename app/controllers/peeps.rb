@@ -7,6 +7,9 @@ post '/peeps' do
   if peep_message.empty?
     flash[:notice] = 'You cannot post an empty peep!'
     redirect '/peeps/new'
+  elsif peep_message.length > 140
+    flash[:notice] = 'Peeps are limited to 140 characters!'
+    redirect '/peeps/new'
   else
     @peep = Peep.create(message: params[:message],
                         user_id: session[:user_id],
@@ -32,6 +35,9 @@ put '/peeps/:id' do
   peep_message = params[:message]
   if peep_message.empty?
     flash[:notice] = 'You cannot update to an empty peep!'
+    erb :'peep/show'
+  elsif peep_message.length > 140
+    flash[:notice] = 'Peeps are limited to 140 characters!'
     erb :'peep/show'
   else
     @peep.update(message: params[:message])
