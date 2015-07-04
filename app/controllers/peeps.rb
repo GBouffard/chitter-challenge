@@ -26,6 +26,12 @@ end
 
 put '/peeps/:id' do
   @peep = Peep.get(params[:id])
-  @peep.update(message: params[:message])
-  redirect to('/')
+  peep_message = params[:message]
+  if peep_message.empty?
+    flash[:notice] = 'You cannot update to an empty peep!'
+    erb :'peep/show'
+  else
+    @peep.update(message: params[:message])
+    redirect to('/')
+  end
 end

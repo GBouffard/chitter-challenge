@@ -48,4 +48,10 @@ feature 'Peep management' do
     expect(page).not_to have_content('Hello Chitter')
     expect(page).to have_content('bye bye Chitter')
   end
+
+  scenario 'an existing peep cannot be updated to an empty peep' do
+    click_link('Update Peep')
+    update_peep('')
+    expect(page).to have_content('You cannot update to an empty peep!')
+  end
 end
