@@ -43,6 +43,7 @@ feature 'Peep management' do
   end
 
   scenario 'an existing peep can be updated' do
+    expect(page.body).to include('Update Peep')
     click_link('Update Peep')
     update_peep('bye bye Chitter')
     expect(page).not_to have_content('Hello Chitter')
@@ -53,5 +54,11 @@ feature 'Peep management' do
     click_link('Update Peep')
     update_peep('')
     expect(page).to have_content('You cannot update to an empty peep!')
+  end
+
+  scenario 'only the owner of a peep can update or delete that peep' do
+    user1_logs_out_user2_signs_in
+    visit '/'
+    expect(page.body).not_to include('Update Peep')
   end
 end

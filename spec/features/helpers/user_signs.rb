@@ -22,4 +22,10 @@ module UserSigns
                 password: 'whatever',
                 password_confirmation: 'whatever')
   end
+
+  def user1_logs_out_user2_signs_in
+    click_button 'Sign out'
+    sign_up('user2@chitter.com', 'whatever', 'whatever')
+    sign_in('user2@chitter.com', 'whatever')
+  end
 end
