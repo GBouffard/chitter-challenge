@@ -9,6 +9,7 @@ class User
   property :id, Serial
   property :email, String, unique: true
   property :password_digest, Text
+  has n, :peeps
 
   def password=(password)
     @password = password

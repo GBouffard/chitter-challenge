@@ -3,7 +3,7 @@ require 'database_cleaner'
 ENV['RACK_ENV'] = 'test'
 require './app/server'
 
-Capybara.app = Chitter
+Capybara.app = Sinatra::Application
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
