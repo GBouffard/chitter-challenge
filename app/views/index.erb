@@ -7,10 +7,12 @@
   <body>
   This is Guillaume's Chitter
   <br><br>
-  <a href="/users/new"><button>Sign Up</button></a>
-  <br><br>
-  <a href="/peeps/new"><button>New Peep</button></a>
-  <br><br>
+  <% if current_user %>
+    <a href="/peeps/new"><button>New Peep</button></a><br><br>
+  <% else %>
+    <a href="/users/new"><button>Sign Up</button></a>
+    <a href="/sessions/new"><button>Sign In</button></a><br><br>
+  <% end %>
     <div>
       <ul>
         <% @peeps.each do |peep| %>
