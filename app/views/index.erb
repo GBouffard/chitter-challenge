@@ -15,7 +15,7 @@
       <ul>
         <% @peeps.each do |peep| %>
           <li><%= peep.message %><br>
-
+            posted by <%= peep.user.email %> on the <%= peep.date_time.strftime("%d/%m/%Y") %> at <%= peep.date_time.strftime("%H:%M") %><br>
             <a href="/peeps/<%= peep.id %>"><button>Update Peep</button></a>
 
             <form action="/peeps/<%= peep.id %>" method="post">
