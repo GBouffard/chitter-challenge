@@ -7,7 +7,7 @@ class User
   validates_uniqueness_of :email, message: 'This email is already taken'
 
   property :id, Serial
-  property :email, String, unique: true
+  property :email, String, unique: true, required: true, format: :email_address
   property :password_digest, Text
   has n, :peeps
 

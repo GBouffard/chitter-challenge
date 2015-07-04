@@ -16,4 +16,10 @@ module UserSigns
     fill_in :password, with: password
     click_button 'Sign in'
   end
+
+  def user_creation
+    User.create(email: 'Guillaume@bouffard.com',
+                password: 'whatever',
+                password_confirmation: 'whatever')
+  end
 end

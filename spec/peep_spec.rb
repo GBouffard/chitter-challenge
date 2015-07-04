@@ -18,4 +18,9 @@ describe Peep do
     Peep.first.destroy
     expect(Peep.count).to eq(0)
   end
+
+  it 'can be updated in the database' do
+    Peep.first.update(message: 'this is an updated peep')
+    expect(Peep.first.message).to eq('this is an updated peep')
+  end
 end

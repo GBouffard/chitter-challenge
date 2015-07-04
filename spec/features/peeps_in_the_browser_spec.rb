@@ -5,7 +5,7 @@ include UserSigns
 require_relative 'helpers/peeps_helper'
 include PeepsHelper
 
-feature 'opening Chitter\'s home page' do
+feature 'Opening Chitter\'s home page' do
   scenario 'seeing all the peeps that have been posted' do
     peeps_creation
     expect(page).to have_content('peep peep peep')
@@ -13,7 +13,7 @@ feature 'opening Chitter\'s home page' do
   end
 end
 
-feature 'peep management' do
+feature 'Peep management' do
   before(:each) do
     add_peep('Hello Chitter')
   end
