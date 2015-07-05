@@ -14,7 +14,8 @@ module PeepsHelper
   end
 
   def peeps_creation
-    User.create(email: 'guillaume@bouffard.com',
+    User.create(username: 'GBouffard',
+                email: 'guillaume@bouffard.com',
                 password: 'password',
                 password_confirmation: 'password')
     guillaume = User.first

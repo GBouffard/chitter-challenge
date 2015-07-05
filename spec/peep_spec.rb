@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Peep do
   before(:each) do
-    User.create(email: 'guillaume@bouffard.com',
+    User.create(username: 'GBouffard',
+                email: 'guillaume@bouffard.com',
                 password: 'password',
                 password_confirmation: 'password')
     guillaume = User.first

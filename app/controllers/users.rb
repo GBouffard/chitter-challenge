@@ -4,7 +4,8 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = User.create(email: params[:email],
+  @user = User.create(username: params[:username],
+                      email: params[:email],
                       password: params[:password],
                       password_confirmation: params[:password_confirmation])
   if @user.save
