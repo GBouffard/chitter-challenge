@@ -3,14 +3,14 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  email = params[:email]
+  username = params[:username]
   password = params[:password]
-  user = User.authenticate(email, password)
+  user = User.authenticate(username, password)
   if user
     session[:user_id] = user.id
     redirect to('/')
   else
-    flash[:errors] = ['The email or password is incorrect']
+    flash[:errors] = ['The username or password is incorrect']
     erb :'sessions/new'
   end
 end

@@ -1,7 +1,7 @@
 module PeepsHelper
   def add_peep(message)
     sign_up
-    sign_in('Guillaume@bouffard.com', 'whatever')
+    sign_in
     visit '/'
     click_link('New Peep')
     fill_in 'message', with: message

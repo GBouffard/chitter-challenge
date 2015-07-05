@@ -4,7 +4,7 @@ include UserSigns
 feature 'A new user visiting Chitter' do
   scenario 'can sign-up with correct credentials' do
     expect { sign_up }.to change(User, :count).by(1)
-    expect(page).to have_content('Welcome, Guillaume@bouffard.com')
+    expect(page).to have_content('Hello GBouffard!')
   end
 
   scenario 'cannot sign-up with an invalid format email' do
@@ -35,25 +35,25 @@ feature 'A registered user visiting Chitter' do
 
   scenario 'can sign in with correct credentials' do
     visit '/'
-    expect(page).not_to have_content('Welcome, Guillaume@bouffard.com')
-    sign_in('Guillaume@bouffard.com', 'whatever')
-    expect(page).to have_content('Welcome, Guillaume@bouffard.com')
+    expect(page).not_to have_content('Hello GBouffard!')
+    sign_in
+    expect(page).to have_content('Hello GBouffard!')
   end
 
   scenario 'cannot sign in with incorrect credentials' do
     visit '/'
-    expect(page).not_to have_content('Welcome, Guillaume@bouffard.com')
-    sign_in('Guillaume@bouffard.com', 'wrongpassword')
-    expect(page).not_to have_content('Welcome, Guillaume@bouffard.com')
+    expect(page).not_to have_content('Hello GBouffard!')
+    sign_in('GBouffard', 'wrongpassword')
+    expect(page).not_to have_content('Hello GBouffard!')
   end
 end
 
 feature 'A registered user logged in on Chitter' do
   scenario 'can sign out if he/she wants to' do
     user_creation
-    sign_in('Guillaume@bouffard.com', 'whatever')
+    sign_in
     click_button 'Sign out'
     expect(page).to have_content('Good bye!')
-    expect(page).not_to have_content('Welcome, Guillaume@bouffard.com')
+    expect(page).not_to have_content('Hello GBouffard!')
   end
 end

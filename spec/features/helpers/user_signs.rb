@@ -12,9 +12,10 @@ module UserSigns
     click_button 'Sign up'
   end
 
-  def sign_in(email, password)
+  def sign_in(username = 'GBouffard',
+              password = 'whatever')
     visit '/sessions/new'
-    fill_in :email, with: email
+    fill_in :username, with: username
     fill_in :password, with: password
     click_button 'Sign in'
   end
@@ -28,7 +29,7 @@ module UserSigns
 
   def user1_logs_out_user2_signs_in
     click_button 'Sign out'
-    sign_up('GBouffard', 'user2@chitter.com', 'whatever', 'whatever')
-    sign_in('user2@chitter.com', 'whatever')
+    sign_up('user2', 'user2@chitter.com', 'whatever2', 'whatever2')
+    sign_in('user2', 'whatever2')
   end
 end
