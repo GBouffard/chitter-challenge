@@ -39,4 +39,12 @@ feature 'Comment management' do
     expect(current_path).to eq('/comments/7/new')
     expect(page).to have_content('You cannot post an empty comment!')
   end
+
+  scenario 'a comment that contains more than 140 characters cannot be posted' do
+    click_link('New Comment')
+    fill_in 'message', with: 'This is a very long message that definitely contains more than 140 characters because that\'s what I need for this test. It has 141 characters'
+    click_button 'Post Comment'
+    expect(current_path).to eq('/comments/8/new')
+    expect(page).to have_content('Comments are limited to 140 characters!')
+  end
 end

@@ -8,6 +8,9 @@ post '/comments/:id' do
   if comment_message.empty?
     flash[:notice] = 'You cannot post an empty comment!'
     redirect "/comments/#{params[:id]}/new"
+  elsif comment_message.length > 140
+    flash[:notice] = 'Comments are limited to 140 characters!'
+    redirect "/comments/#{params[:id]}/new"
   else
     Comment.create(message: params[:message],
                    peep_id: params[:id],
