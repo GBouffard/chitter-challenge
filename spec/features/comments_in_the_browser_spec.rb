@@ -52,4 +52,11 @@ feature 'Comment management' do
     click_button('Delete Comment')
     expect(page).not_to have_content('This is a comment!')
   end
+
+  scenario 'an existing comment can be updated' do
+    click_link('Update Comment')
+    update_comment('Haha! I just changed that!')
+    expect(page).not_to have_content('This is a comment!')
+    expect(page).to have_content('Haha! I just changed that!')
+  end
 end

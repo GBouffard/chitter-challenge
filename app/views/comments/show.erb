@@ -1,0 +1,9 @@
+<div>
+  <form action="/comments/<%= @comment.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    Message: <textarea name="message"><%= @comment.message %></textarea> 
+    <input type="submit" value="Update">
+  </form> 
+</div>
+
+<a href="/peep_page/<%= @comment.peep_id %>"><button>Cancel</button></a>

@@ -34,4 +34,9 @@ module CommentsHelper
     click_button 'Post Comment'
     visit '/'
   end
+
+  def update_comment(message)
+    fill_in 'message', with: message
+    click_button 'Update'
+  end
 end
