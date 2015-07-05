@@ -40,6 +40,9 @@ put '/comments/:id' do
   if comment_message.empty?
     flash[:notice] = 'You cannot update to an empty comment!'
     erb :'comments/show'
+  elsif comment_message.length > 140
+    flash[:notice] = 'Comments are limited to 140 characters!'
+    erb :'comments/show'
   else
     @comment.update(message: params[:message])
     flash[:notice] = 'Comment successfully updated!'

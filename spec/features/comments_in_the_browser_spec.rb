@@ -65,4 +65,10 @@ feature 'Comment management' do
     update_peep('')
     expect(page).to have_content('You cannot update to an empty comment!')
   end
+
+  scenario 'an existing comment cannot be updated to a comment that contains more than 140 characters' do
+    click_link('Update Comment')
+    update_peep('This is a very long message that definitely contains more than 140 characters because that\'s what I need for this test. It has 141 characters')
+    expect(page).to have_content('Comments are limited to 140 characters!')
+  end
 end
