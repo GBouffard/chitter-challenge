@@ -16,6 +16,14 @@ post '/comments/:id' do
                    peep_id: params[:id],
                    user_id: session[:user_id],
                    date_time: DateTime.now)
-    redirect '/'
+    redirect to("/peep_page/#{params[:id]}")
   end
+end
+
+delete '/comments/:id' do
+  @comment = Comment.get(params[:id])
+  @peep = @comment.peep_id
+  @comment.destroy
+  flash[:notice] = 'comments successfully deleted!'
+  redirect to("/peep_page/#{@peep}")
 end

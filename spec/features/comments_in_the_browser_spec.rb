@@ -47,4 +47,9 @@ feature 'Comment management' do
     expect(current_path).to eq('/comments/8/new')
     expect(page).to have_content('Comments are limited to 140 characters!')
   end
+
+  scenario 'an existing comment can be deleted' do
+    click_button('Delete Comment')
+    expect(page).not_to have_content('This is a comment!')
+  end
 end
