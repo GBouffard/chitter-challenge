@@ -13,6 +13,7 @@ class User
   property :email, String, unique: true, required: true, format: :email_address
   property :password_digest, Text
   has n, :peeps
+  has n, :comments
 
   def password=(password)
     @password = password
