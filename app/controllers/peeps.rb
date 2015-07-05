@@ -11,9 +11,9 @@ post '/peeps' do
     flash[:notice] = 'Peeps are limited to 140 characters!'
     redirect '/peeps/new'
   else
-    @peep = Peep.create(message: params[:message],
-                        user_id: session[:user_id],
-                        date_time: DateTime.now)
+    Peep.create(message: params[:message],
+                user_id: session[:user_id],
+                date_time: DateTime.now)
     redirect '/'
   end
 end

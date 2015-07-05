@@ -2,6 +2,8 @@
   <%= @peep.message %><br>
   posted by <%= @peep.user.username %> on the <%= @peep.date_time.strftime("%d/%m/%Y") %> at <%= @peep.date_time.strftime("%H:%M") %><br>
  </div>
+<br>
+<a href="/comments/<%= @peep.id %>/new"><button>New Comment</button></a><br><br>
 <br><br><br>
 
 <div>
@@ -13,3 +15,5 @@
     <% end %>
   </ul>
 </div>
+
+<a href="/"><button>Back to the home page</button></a>

@@ -19,4 +19,19 @@ module CommentsHelper
                    date_time: DateTime.now)
     visit '/'
   end
+
+  def add_comment(message)
+    sign_up
+    sign_in
+    visit '/'
+    click_link('New Peep')
+    fill_in 'message', with: 'peep to comment'
+    click_button 'Post Peep'
+    visit '/'
+    click_link('See comments')
+    click_link('New Comment')
+    fill_in 'message', with: message
+    click_button 'Post Comment'
+    visit '/'
+  end
 end
