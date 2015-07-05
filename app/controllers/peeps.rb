@@ -45,3 +45,9 @@ put '/peeps/:id' do
     redirect to('/')
   end
 end
+
+get '/peep_page/:id' do
+  @peep = Peep.get(params[:id])
+  @comments = Comment.all.select { |comment| @peep.id == comment.peep_id }
+  erb :'peep/page'
+end

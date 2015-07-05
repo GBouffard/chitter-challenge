@@ -18,6 +18,7 @@
         <% @peeps.each do |peep| %>
           <li><%= peep.message %><br>
             posted by <%= peep.user.username %> on the <%= peep.date_time.strftime("%d/%m/%Y") %> at <%= peep.date_time.strftime("%H:%M") %><br>
+            <a href="/peep_page/<%= peep.id %>"><button>See comments</button></a><br>
             <% if current_user == peep.user %>
               <a href="/peeps/<%= peep.id %>"><button>Update Peep</button></a>
               <form action="/peeps/<%= peep.id %>" method="post">

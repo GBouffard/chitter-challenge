@@ -1,0 +1,15 @@
+<div>
+  <%= @peep.message %><br>
+  posted by <%= @peep.user.username %> on the <%= @peep.date_time.strftime("%d/%m/%Y") %> at <%= @peep.date_time.strftime("%H:%M") %><br>
+ </div>
+<br><br><br>
+
+<div>
+  <ul>
+    <% @comments.each do |comment| %>
+      <li><%= comment.message %><br>
+        posted by <%= comment.user.username %> on the <%= comment.date_time.strftime("%d/%m/%Y") %> at <%= comment.date_time.strftime("%H:%M") %><br>
+      </li>
+    <% end %>
+  </ul>
+</div>
