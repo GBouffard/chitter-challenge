@@ -71,4 +71,11 @@ feature 'Comment management' do
     update_peep('This is a very long message that definitely contains more than 140 characters because that\'s what I need for this test. It has 141 characters')
     expect(page).to have_content('Comments are limited to 140 characters!')
   end
+
+  scenario 'only the owner of a comment can update or delete that comment' do
+    user1_logs_out_user2_signs_in
+    visit '/'
+    click_link('See comments')
+    expect(page.body).not_to include('Update Comment')
+  end
 end
