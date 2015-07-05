@@ -36,7 +36,13 @@ end
 put '/comments/:id' do
   @comment = Comment.get(params[:id])
   @peep = @comment.peep_id
-  @comment.update(message: params[:message])
-  flash[:notice] = 'Comment successfully updated!'
-  redirect to("/peep_page/#{@peep}")
+  comment_message = params[:message]
+  if comment_message.empty?
+    flash[:notice] = 'You cannot update to an empty comment!'
+    erb :'comments/show'
+  else
+    @comment.update(message: params[:message])
+    flash[:notice] = 'Comment successfully updated!'
+    redirect to("/peep_page/#{@peep}")
+  end
 end

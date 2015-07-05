@@ -59,4 +59,10 @@ feature 'Comment management' do
     expect(page).not_to have_content('This is a comment!')
     expect(page).to have_content('Haha! I just changed that!')
   end
+
+  scenario 'an existing comment cannot be updated to an empty comment' do
+    click_link('Update Comment')
+    update_peep('')
+    expect(page).to have_content('You cannot update to an empty comment!')
+  end
 end
