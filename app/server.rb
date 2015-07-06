@@ -8,6 +8,7 @@ require_relative 'controllers/sessions'
 require_relative 'controllers/peeps'
 require_relative 'controllers/comments'
 
+set :public_folder, proc { File.join(root, '..', 'public') }
 enable :sessions
 use Rack::Flash
 use Rack::MethodOverride

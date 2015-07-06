@@ -1,26 +1,3 @@
-<div>
-  <%= @peep.message %><br>
-  posted by <%= @peep.user.username %> on the <%= @peep.date_time.strftime("%d/%m/%Y") %> at <%= @peep.date_time.strftime("%H:%M") %><br>
- </div>
-<br>
-<a href="/comments/<%= @peep.id %>/new"><button>New Comment</button></a><br><br>
-<br><br><br>
-
-<div>
-  <ul>
-    <% @comments.each do |comment| %>
-      <li><%= comment.message %><br>
-        posted by <%= comment.user.username %> on the <%= comment.date_time.strftime("%d/%m/%Y") %> at <%= comment.date_time.strftime("%H:%M") %><br>
-        <% if current_user == comment.user %>
-        <a href="/comments/<%= comment.id %>"><button>Update Comment</button></a>
-        <form action="/comments/<%= comment.id %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete Comment">
-        </form>
-        <% end %><br>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
+<%= partial :peep_of_the_page %>
+<%= partial :comments_display %>
 <a href="/"><button>Back to the home page</button></a>

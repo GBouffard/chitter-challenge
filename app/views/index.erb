@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Guillaume 's Chitter</title>
-  </head>
-
-  <body>
-  This is Guillaume's Chitter
-  <br><br>
-    <%= partial :peeps_display %>
-  </body>
-</html>
+<div>
+  <ul>
+    <% @peeps.each do |peep| %>
+      <li><%= peep.message %><br>
+        posted by <%= peep.user.username %> on the <%= peep.date_time.strftime("%d/%m/%Y") %> at <%= peep.date_time.strftime("%H:%M") %><br>
+        <a href="/peep_page/<%= peep.id %>"><button>See comments</button></a><br>
+        <% if current_user == peep.user %>
+          <a href="/peeps/<%= peep.id %>"><button>Update Peep</button></a>
+          <form action="/peeps/<%= peep.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete Peep">
+          </form>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
