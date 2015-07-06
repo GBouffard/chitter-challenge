@@ -14,3 +14,31 @@ img.logo {
     display: block;
     margin: auto
 }
+
+header {  
+  height: 50px;
+  background:rgba(0,0,0,0.5);
+  color: white;
+  display: flex;
+  padding: 0 20px;
+  border-color: black;
+  border-style: solid;
+}
+
+header #user-links {
+  flex: 1;
+  -webkit-flex: 1;
+  text-align: right;  
+}
+
+#welcome-message {
+  font-size: 24px;
+}
+
+#user-links > * {
+  display: inline-block;
+}
+
+header > * {
+  margin: auto 0;
+}

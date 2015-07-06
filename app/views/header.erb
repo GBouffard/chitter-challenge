@@ -1,13 +1,17 @@
 <header>
-<% if current_user %>
-  Hello <%= current_user.username %>!<br>
-  <a href="/peeps/new"><button>New Peep</button></a><br><br>
-  <form method='post' action='/sessions'>
-    <input type='hidden' name='_method' value='delete'>
-    <input type='submit' value='Sign out'>
-  </form>
-<% else %>
-  <a href="/users/new"><button>Sign Up</button></a>
-  <a href="/sessions/new"><button>Sign In</button></a><br><br>
-<% end %>
+  <% if current_user %>
+    <span id="welcome-message">
+      Hello <%= current_user.username %> !
+    </span>
+    <div id="user-links">
+      <a href="/peeps/new" id="new-peep" class='button'>New Peep</a>
+      <form id="sign-out" method='post' action='/sessions'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Sign out'>
+      </form>
+    <% else %>
+      <a href="/users/new" id='sign-up' class='button'>Sign Up</a>
+      <a href="/sessions/new" id='sign-in' class='button'>Sign In</a>
+    </div>
+  <% end %>
 </header>
