@@ -4,5 +4,5 @@ class Peep
   property :message, Text
   property :date_time, DateTime
   belongs_to :user
-  has n, :comments
+  has n, :comments, constraint: :destroy
 end

@@ -12,8 +12,8 @@ class User
   property :username, String, unique: true, required: true
   property :email, String, unique: true, required: true, format: :email_address
   property :password_digest, Text
-  has n, :peeps
-  has n, :comments
+  has n, :peeps, constraint: :destroy
+  has n, :comments,  constraint: :destroy
 
   def password=(password)
     @password = password
