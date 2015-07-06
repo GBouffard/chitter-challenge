@@ -1,0 +1,11 @@
+<% if current_user %>
+  Hello <%= current_user.username %>!<br>
+  <a href="/peeps/new"><button>New Peep</button></a><br><br>
+  <form method='post' action='/sessions'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='Sign out'>
+  </form>
+<% else %>
+  <a href="/users/new"><button>Sign Up</button></a>
+  <a href="/sessions/new"><button>Sign In</button></a><br><br>
+<% end %>

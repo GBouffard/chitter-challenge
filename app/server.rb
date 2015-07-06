@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/partial'
 require 'rack-flash'
 require_relative 'data_mapper_setup'
 require_relative 'helpers/session_helper'
@@ -11,6 +12,7 @@ enable :sessions
 use Rack::Flash
 use Rack::MethodOverride
 helpers SessionHelper
+set :partial_template_engine, :erb
 
 get '/' do
   @peeps = Peep.all
