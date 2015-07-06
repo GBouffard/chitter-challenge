@@ -1,3 +1,4 @@
+<header>
 <% if current_user %>
   Hello <%= current_user.username %>!<br>
   <a href="/peeps/new"><button>New Peep</button></a><br><br>
@@ -9,3 +10,4 @@
   <a href="/users/new"><button>Sign Up</button></a>
   <a href="/sessions/new"><button>Sign In</button></a><br><br>
 <% end %>
+</header>

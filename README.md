@@ -45,7 +45,7 @@ rake
 
 and this is what you should see
 
-![](public/rps_screenshot.png)
+![](public/images/chitter_rspec_tests.png)
 
 Makers specifications
 ----

@@ -9,3 +9,8 @@ body {
   background-position: center; 
   color: #E6F1FF;  
 }
+
+img.logo {
+    display: block;
+    margin: auto
+}
