@@ -1,4 +1,17 @@
-module UserSigns
+module UsersHelper
+  def user_creation
+    User.create(username: 'GBouffard',
+                email: 'Guillaume@bouffard.com',
+                password: 'whatever',
+                password_confirmation: 'whatever')
+  end
+
+  def user1_logs_out_user2_signs_in
+    click_button 'Sign out'
+    sign_up('user2', 'user2@chitter.com', 'whatever2', 'whatever2')
+    sign_in('user2', 'whatever2')
+  end
+
   def sign_up(username = 'GBouffard',
               email = 'Guillaume@bouffard.com',
               password = 'whatever',
@@ -18,18 +31,5 @@ module UserSigns
     fill_in :username, with: username
     fill_in :password, with: password
     click_button 'Sign in'
-  end
-
-  def user_creation
-    User.create(username: 'GBouffard',
-                email: 'Guillaume@bouffard.com',
-                password: 'whatever',
-                password_confirmation: 'whatever')
-  end
-
-  def user1_logs_out_user2_signs_in
-    click_button 'Sign out'
-    sign_up('user2', 'user2@chitter.com', 'whatever2', 'whatever2')
-    sign_in('user2', 'whatever2')
   end
 end

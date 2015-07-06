@@ -2,22 +2,12 @@ require 'spec_helper'
 
 describe Comment do
   before(:each) do
-    User.create(username: 'GBouffard',
-                email: 'guillaume@bouffard.com',
-                password: 'password',
-                password_confirmation: 'password')
-    guillaume = User.first
-    Peep.create(message: 'peep test',
-                user_id: guillaume.id)
-    new_peep = Peep.first
-    Comment.create(message: 'comment test',
-                   user_id: guillaume.id,
-                   peep_id: new_peep.id)
+    comment_creation
   end
 
   it 'can be added in the database' do
     expect(Comment.count).to eq(1)
-    expect(Comment.first.message).to eq('comment test')
+    expect(Comment.first.message).to eq('nice peep!')
   end
 
   it 'can be deleted from the database' do

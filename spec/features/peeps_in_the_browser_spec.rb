@@ -1,13 +1,12 @@
 require 'spec_helper'
 require 'tilt/erb'
-require_relative 'helpers/user_signs'
-include UserSigns
 require_relative 'helpers/peeps_helper'
 include PeepsHelper
 
 feature 'Opening Chitter\'s home page' do
   scenario 'seeing all the peeps that have been posted' do
-    peeps_creation
+    peep_creation
+    second_peep_creation
     expect(page).to have_content('peep peep peep')
     expect(page).to have_content('moo!')
   end

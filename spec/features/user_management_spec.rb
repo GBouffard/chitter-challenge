@@ -1,5 +1,6 @@
-require_relative 'helpers/user_signs'
-include UserSigns
+require 'spec_helper'
+require_relative 'helpers/users_helper'
+include UsersHelper
 
 feature 'A new user visiting Chitter' do
   scenario 'can sign-up with correct credentials' do

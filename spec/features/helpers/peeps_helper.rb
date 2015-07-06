@@ -1,4 +1,18 @@
 module PeepsHelper
+  def peep_creation
+    user_creation
+    Peep.create(message: 'peep peep peep',
+                user_id: User.first.id,
+                date_time: DateTime.now)
+  end
+
+  def second_peep_creation
+    Peep.create(message: 'moo!',
+                user_id: User.first.id,
+                date_time: DateTime.now)
+    visit '/'
+  end
+
   def add_peep(message)
     sign_up
     sign_in
@@ -11,16 +25,5 @@ module PeepsHelper
   def update_peep(message)
     fill_in 'message', with: message
     click_button 'Update'
-  end
-
-  def peeps_creation
-    User.create(username: 'GBouffard',
-                email: 'guillaume@bouffard.com',
-                password: 'password',
-                password_confirmation: 'password')
-    guillaume = User.first
-    Peep.create(message: 'peep peep peep', user_id: guillaume.id, date_time: DateTime.now)
-    Peep.create(message: 'moo!', user_id: guillaume.id, date_time: DateTime.now)
-    visit '/'
   end
 end
