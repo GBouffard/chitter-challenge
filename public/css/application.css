@@ -207,7 +207,7 @@ header > * {
 	top:1px;
 }
 
-.peep-buttons {
+.peep-comment-buttons {
   float: right;
 }
 
@@ -255,4 +255,55 @@ a.homepage-button {
   float: right;
   margin-top: -10px;
   margin-right: -1px;
+}
+
+div.orange-line {
+  border-top: 2px solid #875A00;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 25px;
+  margin-left: 25px;  
+}
+
+.comment-buttons {
+	-moz-box-shadow:inset 0px 1px 11px -18px #f9eca0;
+	-webkit-box-shadow:inset 0px 1px 11px -18px #f9eca0;
+	box-shadow:inset 0px 1px 11px -18px #f9eca0;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e));
+	background:-moz-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-webkit-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+	background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+	background-color:#f0c911;
+	-moz-border-radius:26px;
+	-webkit-border-radius:26px;
+	border-radius:26px;
+	border:1px solid #6b2a1d;
+	display:inline-block;
+	cursor:pointer;
+	color:#473500;
+	font-family:Arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:2px 7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ded17c;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.comment-buttons:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911));
+	background:-moz-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-webkit-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-o-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:-ms-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
+	background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911',GradientType=0);
+	background-color:#f2ab1e;
+}
+.comment-buttons:active {
+	position:relative;
+	top:1px;
 }

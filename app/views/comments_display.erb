@@ -9,13 +9,20 @@
           posted by <%= comment.user.username %> on the <%= comment.date_time.strftime("%d/%m/%Y") %> at <%= comment.date_time.strftime("%H:%M") %>
         </span>
         <% if current_user == comment.user %>
-        <a href="/comments/<%= comment.id %>"><button>Update Comment</button></a>
-        <form action="/comments/<%= comment.id %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete Comment">
-        </form>
-        <% end %><br>
-      </li>
-    <% end %>
+          <table class='peep-comment-buttons'>
+            <tr>
+              <td><a href="/comments/<%= comment.id %>" class='comment-buttons'>Update Comment</a></td>
+              <td><form action="/comments/<%= comment.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete Comment" id='delete-peep' class='comment-buttons'>
+              </form></td>
+            </tr>
+          </table>
+        <% end %>
+        <% if @comments.last != comment %>
+          <div class='orange-line'></div>
+        <% end %>
+      <% end %>
+    </li>
   </ul>
 </div>
