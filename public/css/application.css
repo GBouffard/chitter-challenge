@@ -158,6 +158,10 @@ header > * {
   margin-top: 10px;
 }
 
+#color-update {
+  color: #875A00;
+}
+
 .peep-button {
 	vertical-align: top
 	-moz-box-shadow: 0px 1px 0px 0px #1c1b18;
@@ -231,4 +235,24 @@ a.homepage-button {
   border: 2px solid #1900BC;
   border-radius:10px;
   min-height: 52px;
+}
+
+#comments {
+  background-image: url(/images/comments_background.jpg);
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px 10px;
+  border: 2px solid #1900BC;
+  border-radius:10px;
+  min-height: 52px;
+  color: #875A00;
+}
+
+#new-comment {
+  float: right;
+  margin-top: -10px;
+  margin-right: -1px;
 }
