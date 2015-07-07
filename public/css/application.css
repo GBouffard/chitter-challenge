@@ -154,6 +154,10 @@ header > * {
   color: #00009E;
 }
 
+#bottom-update {
+  margin-top: 10px;
+}
+
 .peep-button {
 	vertical-align: top
 	-moz-box-shadow: 0px 1px 0px 0px #1c1b18;
@@ -214,4 +218,17 @@ a.homepage-button {
   display:block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.peep-of-the-page {
+  background-image: url(/images/peeps_background.jpg);
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px 10px;
+  border: 2px solid #1900BC;
+  border-radius:10px;
+  min-height: 52px;
 }

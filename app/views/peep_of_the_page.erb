@@ -1,7 +1,7 @@
-<div>
-  <%= @peep.message %><br>
+<div class='peep'>
+  <%= @peep.message %>
+  <div class='peep_posted_by' id='bottom-update'>
   posted by <%= @peep.user.username %> on the <%= @peep.date_time.strftime("%d/%m/%Y") %> at <%= @peep.date_time.strftime("%H:%M") %><br>
+  </div>
 </div>
-<br><br>
 <a href="/comments/<%= @peep.id %>/new"><button>New Comment</button></a>
-<br><br>
