@@ -68,7 +68,7 @@ header > * {
 	padding:2px 14px;
 	text-decoration:none;
 	text-shadow:0px -1px 0px #5b6178;
-	margin-left: 20px;
+    margin-left: 20px;
     margin-right: 20px;
 }
 .button:hover {
@@ -132,11 +132,14 @@ header > * {
 .peep {
   background-image: url(/images/peeps_background.jpg);
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
-  margin: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   padding: 10px 10px;
-  border-color: black;
-  border-style: solid;
+  border: 2px solid #1900BC;
   border-radius:10px;
+  min-height: 52px;
 }
 
 .peep_message {
@@ -145,4 +148,57 @@ header > * {
 .peep_posted_by {
   font-size:11px;
   color: #00009E;
+}
+
+.peep-button {
+	vertical-align: top
+	-moz-box-shadow: 0px 1px 0px 0px #1c1b18;
+	-webkit-box-shadow: 0px 1px 0px 0px #1c1b18;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffbf00), color-stop(1, #fff8e5));
+	background:-moz-linear-gradient(top, #ffbf00 5%, #fff8e5 100%);
+	background:-webkit-linear-gradient(top, #ffbf00 5%, #fff8e5 100%);
+	background:-o-linear-gradient(top, #ffbf00 5%, #fff8e5 100%);
+	background:-ms-linear-gradient(top, #ffbf00 5%, #fff8e5 100%);
+	background:linear-gradient(to bottom, #ffbf00 5%, #fff8e5 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbf00', endColorstr='#fff8e5',GradientType=0);
+	background-color:#ffbf00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:2px solid #2600ff;
+	display:inline-block;
+	cursor:pointer;
+	color:#0015ff;
+	font-family:Arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:3px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.peep-button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff7f29), color-stop(1, #faad3a));
+	background:-moz-linear-gradient(top, #ff7f29 5%, #faad3a 100%);
+	background:-webkit-linear-gradient(top, #ff7f29 5%, #faad3a 100%);
+	background:-o-linear-gradient(top, #ff7f29 5%, #faad3a 100%);
+	background:-ms-linear-gradient(top, #ff7f29 5%, #faad3a 100%);
+	background:linear-gradient(to bottom, #ff7f29 5%, #faad3a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7f29', endColorstr='#faad3a',GradientType=0);
+	background-color:#ff7f29;
+	color:#000BA6;
+}
+.peep-button:active {
+	position:relative;
+	top:1px;
+}
+
+.peep-buttons {
+  float: right;
+}
+
+#delete-peep {
+  line-height: 20px
 }
