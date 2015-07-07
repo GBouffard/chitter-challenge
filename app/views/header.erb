@@ -4,7 +4,7 @@
       Hello <%= current_user.username %> !
     </span>
     <div id="user-links">
-      <a href="/peeps/new" id="new-peep" class='button'>New Peep</a>
+      <a href="/peeps/new" id="new-peep" class='new_peep_button'>New Peep</a>
       <form id="sign-out" method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
         <input type='submit' value='Sign out' class='button'>
