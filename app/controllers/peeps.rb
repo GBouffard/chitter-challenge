@@ -1,5 +1,5 @@
 get '/peeps/new' do
-  erb :'peep/new'
+  erb :'peeps/new'
 end
 
 post '/peeps' do
@@ -27,7 +27,7 @@ end
 
 get '/peeps/:id' do
   @peep = Peep.get(params[:id])
-  erb :'peep/show'
+  erb :'peeps/show'
 end
 
 put '/peeps/:id' do
@@ -35,10 +35,10 @@ put '/peeps/:id' do
   peep_message = params[:message]
   if peep_message.empty?
     flash[:notice] = 'You cannot update to an empty peep!'
-    erb :'peep/show'
+    erb :'peeps/show'
   elsif peep_message.length > 140
     flash[:notice] = 'Peeps are limited to 140 characters!'
-    erb :'peep/show'
+    erb :'peeps/show'
   else
     @peep.update(message: params[:message])
     flash[:notice] = 'Peep successfully updated!'
@@ -49,5 +49,5 @@ end
 get '/peep_page/:id' do
   @peep = Peep.get(params[:id])
   @comments = Comment.all.select { |comment| @peep.id == comment.peep_id }
-  erb :'peep/page'
+  erb :'peeps/page'
 end

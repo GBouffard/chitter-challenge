@@ -1,0 +1,18 @@
+<li class='peep'>
+  <span class='peep_message'>
+    <%= peep.message %>
+  </span><br>
+  <span class='peep_posted_by'>
+  posted by <%= peep.user.username %> on the <%= peep.date_time.strftime("%d/%m/%Y") %> at <%= peep.date_time.strftime("%H:%M") %>
+  </span>
+  <span class='peep-buttons'>
+    <a href="/peep_page/<%= peep.id %>" id='see-comments' class='peep-button'>See comments</a>
+    <% if current_user == peep.user %>
+      <a href="/peeps/<%= peep.id %>" id='update-peep' class='peep-button'>Update Peep</a>
+      <form action="/peeps/<%= peep.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Peep" class='peep-button'>
+      </form>
+    <% end %>
+  </span>
+</li>
