@@ -1,7 +1,9 @@
-<div>
+<div id='comment-box'>
   <form action="/comments/<%= @peep.id %>" method='post'>
-    Message: <textarea name="message"></textarea>
-    <input type='submit' value='Post Comment'>
+    Message:<br>
+    <textarea class="styled" name="message"></textarea><br>
+    <input type="submit" value='Post Comment' class='comment-buttons' id='post-comment'>
+    <a href="/" class='comment-buttons' id='special-height'>Cancel</a>
   </form> 
 </div>
 

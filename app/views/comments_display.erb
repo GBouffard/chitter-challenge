@@ -11,10 +11,10 @@
         <% if current_user == comment.user %>
           <table class='peep-comment-buttons'>
             <tr>
-              <td><a href="/comments/<%= comment.id %>" class='comment-buttons'>Update Comment</a></td>
+              <td><a href="/comments/<%= comment.id %>" class='comment-buttons' id='update-comment'>Update Comment</a></td>
               <td><form action="/comments/<%= comment.id %>" method="post">
                 <input type="hidden" name="_method" value="delete">
-                <input type="submit" value="Delete Comment" id='delete-peep' class='comment-buttons'>
+                <input type="submit" value="Delete Comment" id='delete-comment' class='comment-buttons'>
               </form></td>
             </tr>
           </table>

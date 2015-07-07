@@ -290,9 +290,8 @@ div.orange-line {
 	padding:2px 7px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ded17c;
-    margin-left: 5px;
-    margin-right: 5px;
 }
+
 .comment-buttons:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911));
 	background:-moz-linear-gradient(top, #f2ab1e 5%, #f0c911 100%);
@@ -306,4 +305,56 @@ div.orange-line {
 .comment-buttons:active {
 	position:relative;
 	top:1px;
+}
+
+#update-comment {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#delete-comment {
+  line-height: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#comment-box {
+  background-image: url(/images/comments_background.jpg);
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  width: 320px;
+  height: 105px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px 10px;
+  border: 2px solid #1900BC;
+  border-radius:10px;
+  color: #875A00;
+}
+
+#special-height {
+  line-height: 13px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#update-comment {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#post-comment {
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+textarea.styled {
+	width: 300px;
+	height: 40px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
 }

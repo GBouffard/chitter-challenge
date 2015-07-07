@@ -1,9 +1,11 @@
-<div>
+<div id='comment-box'>
   <form action="/comments/<%= @comment.id %>" method="post">
     <input type="hidden" name="_method" value="put">
-    Message: <textarea name="message"><%= @comment.message %></textarea> 
-    <input type="submit" value="Update">
+    Message:<br>
+    <textarea class="styled" name="message"><%= @comment.message %></textarea><br>
+    <input type="submit" value="Update" class='comment-buttons' id='update-comment'>
+    <a href="/peep_page/<%= @comment.peep_id %>" class='comment-buttons' id='special-height'>Cancel</a>
   </form> 
 </div>
 
-<a href="/peep_page/<%= @comment.peep_id %>"><button>Cancel</button></a>
+<a href="/" class='homepage-button'></a>
