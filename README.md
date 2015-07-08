@@ -16,11 +16,11 @@ Bonus from the challenge, which I both did:
 * Users can post comments to peeps. A user can only post, update and delete his/her comments if he/she is logged in.
 * Work on the css to make it look good.
 
-![](public/images/screenshot_1)
+![](public/images/screenshot_1.png)
 
-![](public/images/screenshot_2)
+![](public/images/screenshot_2.png)
 
-![](public/images/screenshot_3)
+![](public/images/screenshot_3.png)
 
 Heroku
 ----
