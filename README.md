@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/GBouffard/chitter-challenge.svg?branch=master)](https://travis-ci.org/GBouffard/chitter-challenge)[![Coverage Status](https://coveralls.io/repos/GBouffard/chitter-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/GBouffard/chitter-challenge?branch=master)
+
 :baby_chick: Chitter Challenge :baby_chick:
 =================
 This is the week 4 challenges at Makers Academy; to create Chitter; a Twitter-like application. Users can signup, login, recover their passwords and post to a public board.
