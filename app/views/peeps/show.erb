@@ -1,8 +1,10 @@
-<div>
+<div class='peep-comment-box' id='peep-box'>
   <form action="/peeps/<%= @peep.id %>" method="post">
     <input type="hidden" name="_method" value="put">
-    Message: <textarea name="message"><%= @peep.message %></textarea> 
-    <input type="submit" value="Update">
+    Message: <br>
+    <textarea class="styled" name="message"><%= @peep.message %></textarea> 
+    <input type="submit" value="Update"class='peep-buttons' id='post-peep'>
+    <a href="/" class='peep-buttons' id='special-height2'>Cancel</a>
   </form> 
 </div>
 

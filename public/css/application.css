@@ -318,8 +318,7 @@ div.orange-line {
   margin-right: 5px;
 }
 
-#comment-box {
-  background-image: url(/images/comments_background.jpg);
+.peep-comment-box {
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   width: 320px;
   height: 105px;
@@ -329,6 +328,14 @@ div.orange-line {
   padding: 10px 10px;
   border: 2px solid #1900BC;
   border-radius:10px;
+}
+
+#peep-box {
+  background-image: url(/images/peeps_background.jpg);
+}
+
+#comment-box {
+  background-image: url(/images/comments_background.jpg);
   color: #875A00;
 }
 
@@ -348,6 +355,17 @@ div.orange-line {
   margin-right: 10px;
 }
 
+#post-peep {
+  margin-left: 64px;
+  margin-right: 10px;
+}
+
+#special-height2 {
+  line-height: 13px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 textarea.styled {
 	width: 300px;
 	height: 40px;
@@ -358,3 +376,46 @@ textarea.styled {
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
+
+.peep-buttons {
+	-moz-box-shadow:inset 0px 1px 11px -18px #a1e3f7;
+	-webkit-box-shadow:inset 0px 1px 11px -18px #a1e3f7;
+	box-shadow:inset 0px 1px 11px -18px #a1e3f7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d8dfa), color-stop(1, #0033ff));
+	background:-moz-linear-gradient(top, #7d8dfa 5%, #0033ff 100%);
+	background:-webkit-linear-gradient(top, #7d8dfa 5%, #0033ff 100%);
+	background:-o-linear-gradient(top, #7d8dfa 5%, #0033ff 100%);
+	background:-ms-linear-gradient(top, #7d8dfa 5%, #0033ff 100%);
+	background:linear-gradient(to bottom, #7d8dfa 5%, #0033ff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d8dfa', endColorstr='#0033ff',GradientType=0);
+	background-color:#7d8dfa;
+	-moz-border-radius:26px;
+	-webkit-border-radius:26px;
+	border-radius:26px;
+	border:1px solid #6b2a1d;
+	display:inline-block;
+	cursor:pointer;
+	color: white;
+	font-family:Arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:2px 7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ded17c;
+}
+
+.peep-buttons:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #b5b2ff), color-stop(1, #9167eb));
+	background:-moz-linear-gradient(top, #b5b2ff 5%, #9167eb 100%);
+	background:-webkit-linear-gradient(top, #b5b2ff 5%, #9167eb 100%);
+	background:-o-linear-gradient(top, #b5b2ff 5%, #9167eb 100%);
+	background:-ms-linear-gradient(top, #b5b2ff 5%, #9167eb 100%);
+	background:linear-gradient(to bottom, #b5b2ff 5%, #9167eb 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b5b2ff', endColorstr='#9167eb',GradientType=0);
+	background-color:#b5b2ff;
+}
+.peep-buttons:active {
+	position:relative;
+	top:1px;
+}
+
