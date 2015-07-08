@@ -21,7 +21,7 @@ end
 delete '/peeps/:id' do
   @peep = Peep.get(params[:id])
   @peep.destroy
-  flash[:notice] = 'Peep successfully deleted!'
+  flash[:success] = 'Peep successfully deleted!'
   redirect to('/')
 end
 
@@ -41,7 +41,8 @@ put '/peeps/:id' do
     erb :'peeps/show'
   else
     @peep.update(message: params[:message])
-    flash[:notice] = 'Peep successfully updated!'
+    flash[:notice] = nil
+    flash[:success] = 'Peep successfully updated!'
     redirect to('/')
   end
 end

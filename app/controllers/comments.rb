@@ -24,7 +24,7 @@ delete '/comments/:id' do
   @comment = Comment.get(params[:id])
   @peep = @comment.peep_id
   @comment.destroy
-  flash[:notice] = 'comments successfully deleted!'
+  flash[:success] = 'comments successfully deleted!'
   redirect to("/peep_page/#{@peep}")
 end
 
@@ -45,7 +45,8 @@ put '/comments/:id' do
     erb :'comments/show'
   else
     @comment.update(message: params[:message])
-    flash[:notice] = 'Comment successfully updated!'
+    flash[:notice] = nil
+    flash[:success] = 'Comment successfully updated!'
     redirect to("/peep_page/#{@peep}")
   end
 end

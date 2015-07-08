@@ -10,4 +10,8 @@
   <div class='flash'>
     <%= flash[:notice] %>
   </div>
+<% elsif flash[:success] %>
+  <div class='alert'>
+    <%= flash[:success] %>
+  </div>
 <% end %>

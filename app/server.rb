@@ -16,6 +16,8 @@ helpers SessionHelper
 set :partial_template_engine, :erb
 
 get '/' do
-  @peeps = Peep.all
+  flash[:notice] = nil
+  flash[:errors] = nil
+  @peeps = Peep.all.reverse!
   erb :index
 end
