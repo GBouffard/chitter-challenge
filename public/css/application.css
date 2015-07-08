@@ -419,3 +419,22 @@ textarea.styled {
 	top:1px;
 }
 
+.flash {
+  background: url(/images/error-icon.png), url(/images/error-icon.png);
+  background-size: 28px 28px;
+  background-position: 1% 1px, 99% 1px;
+  background-repeat: no-repeat;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  margin-top: 25px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 2px solid #B60012;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  color: white;
+  background-color: #FD0019;
+}
+
+
+
