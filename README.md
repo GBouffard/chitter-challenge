@@ -2,21 +2,18 @@
 
 :baby_chick: Chitter Challenge :baby_chick:
 =================
-This is the week 4 challenges at Makers Academy; to create Chitter; a Twitter-like application. Users can signup, login, recover their passwords and post to a public board.
-
-
-Notes on functionality requested from the challenge:
-------
-
+This is the week 4 challenges at Makers Academy; to create Chitter; a Twitter-like application. Users can signup, login and post to a public board.
 * Users sign up to chitter with their email, password, name and a user name. The username and email are unique.
-* Peeps (posts to chitter) have the name of the maker and their user handle.
+* Peeps (posts) have the name of their makers and their user handle.
 * A user doesn't have to be logged in to see the peeps but he/she has to be, to post, update and delete his/her peeps.
 
-Bonus from the challenge, which I both did:
------
-
+Bonus challenge features (both added):
 * Users can post comments to peeps. A user can only post, update and delete his/her comments if he/she is logged in.
-* Work on the css to make it look good.
+* Adding some css to make it look good.
+
+Heroku
+----
+[Guillaume's Chitter](https://guillaume-chitter.herokuapp.com/)
 
 ![](public/images/screenshot_1.png)
 
@@ -24,13 +21,9 @@ Bonus from the challenge, which I both did:
 
 ![](public/images/screenshot_3.png)
 
-Heroku
-----
-[Link coming soon]()
-
 Objectives of exercise
 ----
-To learn about SQL databases and users administrations (sign up, in and out), as well as frontend design with HTML and CSS technologies.
+To learn about SQL databases, DataMapper, associations and frontend design with HTML and CSS technologies.
 
 Technologies used
 ----
