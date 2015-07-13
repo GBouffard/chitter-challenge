@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GBouffard/chitter-challenge.svg?branch=master)](https://travis-ci.org/GBouffard/chitter-challenge)[![Coverage Status](https://coveralls.io/repos/GBouffard/chitter-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/GBouffard/chitter-challenge?branch=master)
+[![Build Status](https://travis-ci.org/GBouffard/chitter-challenge.svg?branch=master)](https://travis-ci.org/GBouffard/chitter-challenge) [![Coverage Status](https://coveralls.io/repos/GBouffard/chitter-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/GBouffard/chitter-challenge?branch=master) [![Code Climate](https://codeclimate.com/repos/55a3d9896956805f780038e0/badges/fd8c18eb797cee16b741/gpa.svg)](https://codeclimate.com/repos/55a3d9896956805f780038e0/feed)
 
 :baby_chick: Chitter Challenge :baby_chick:
 =================
